@@ -7,12 +7,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class AppointmentPage {
+public class AppointmentPage extends BaseClass{
     public AppointmentPage() {
         PageFactory.initElements(DriverFactory.driver, this);
     }
@@ -48,7 +50,6 @@ public class AppointmentPage {
     @FindBy(how = How.LINK_TEXT,using = "Logout")
     public WebElement logoutLink;
 
-
     public void bookingAppointment(){
        // PageFactory.initElements(driver,this);
         facilityDD.click();
@@ -65,9 +66,9 @@ public class AppointmentPage {
     public void logout() throws InterruptedException {
        // PageFactory.initElements(this.driver,this);
         menuToggleBtn.click();
-        Thread.sleep(5000);
+        wait = new WebDriverWait(DriverFactory.driver,2);
+        wait.until(ExpectedConditions.elementToBeClickable(logoutLink));
         logoutLink.click();
-
     }
 
     public String getHeader(){
