@@ -18,6 +18,7 @@ public class Base {
     public static String URL;
     public static String Browser_type;
 
+
     public static void getUrl(){
         config = new Properties();
         try {
