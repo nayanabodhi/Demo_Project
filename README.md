@@ -13,3 +13,7 @@ Run Demo.bat
 Results-
 It will be displayed at the end of the batch file. If not displayed then find the results in the below location-
 DemoautProject\test-output\ExtentReport.html
+
+Actions-
+Run the Demo.bat file from the Project folder
+Press any key if prompted while running the Demo.bat file
