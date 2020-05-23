@@ -14,7 +14,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class AppointmentPage extends BaseClass{
+public class AppointmentPage {
     public AppointmentPage() {
         PageFactory.initElements(DriverFactory.driver, this);
     }
@@ -66,8 +66,8 @@ public class AppointmentPage extends BaseClass{
     public void logout() throws InterruptedException {
        // PageFactory.initElements(this.driver,this);
         menuToggleBtn.click();
-        wait = new WebDriverWait(DriverFactory.driver,2);
-        wait.until(ExpectedConditions.elementToBeClickable(logoutLink));
+        BaseClass.wait = new WebDriverWait(DriverFactory.driver,2);
+        BaseClass.wait.until(ExpectedConditions.elementToBeClickable(logoutLink));
         logoutLink.click();
     }
 

@@ -21,13 +21,14 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 public class BaseClass extends Base{
 
    public ExtentHtmlReporter htmlReporter;
    public ExtentReports extent;
    public ExtentTest test;
-   public WebDriverWait wait;
+   public static WebDriverWait wait;
 
    @BeforeMethod
    public void Initialize(){
@@ -38,7 +39,6 @@ public class BaseClass extends Base{
    public void openBrowser(){
       DriverFactory.driver.manage().window().maximize();
       DriverFactory.driver.navigate().to(URL);
-      /*WebDriverWait wait = new WebDriverWait(DriverFactory.driver, 5);*/
    }
    public void closeBrowser(){
       DriverFactory.driver.close();

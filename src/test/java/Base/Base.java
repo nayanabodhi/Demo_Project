@@ -9,6 +9,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class Base {
 
@@ -58,6 +59,9 @@ public class Base {
                 break;
 
         }
+        DriverFactory.driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        DriverFactory.driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         return DriverFactory.driver;
+
     }
 }
