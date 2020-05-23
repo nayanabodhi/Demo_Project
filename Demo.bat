@@ -1,11 +1,6 @@
 @echo off
 title DemoAut Project
-cd \
-echo cd
-d:
-echo cd
-pause
-cd D:\BDD_Projects\cucumber-java-skeleton-5.6.0\DemoautProject\
+CD /D %root%
 echo %cd%
 pause
 call mvn clean
